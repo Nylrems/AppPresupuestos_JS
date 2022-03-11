@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style.css" />
     <title>App presupuestos</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <div class="cabecero">
+      <div class="presupuesto">
+        <div class="presupuesto_titulo">Presupuesto disponible</div>
+        <div class="presupuesto_valor">+ 2,000</div>
+        <div class="presupuesto_ingreso limpiarEstilos">
+          <div class="presupuesto_ingreso--texto">Ingresos</div>
+          <div class="derecha">
+            <div class="presupuesto_ingreso--valor">+ 4,000</div>
+            <div class="presupuesto_ingreso--porcentaje">70%</div>
+        </div>
+    </div>
+    <div class="presupuesto_egreso limpiarEstilos">
+        <div class="presupuesto_egreso--texto">Egresos</div>
+        <div class="derecha limpiarEstilos">
+            <div class="presupuesto_egreso--valor">- 1,500</div>
+            <div class="presupuesto_egreso--porcentaje">30%</div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/js/Dato.js"></script>
+    <script src="src/js/Ingreso.js"></script>
+    <script src="src/js/Egreso.js"></script>
+    <script src="src/js/app.js"></script>
+  </body>
 </html>
