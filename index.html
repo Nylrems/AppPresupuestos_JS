@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/css/style.css" />
+
     <title>App presupuestos</title>
   </head>
   <body onload="cargarApp()">
@@ -31,9 +32,40 @@
       </div>
     </div>
 
+    <div class="contenedor limpiarEstilos">
+      <div class="ingreso">
+        <h2 class="ingreso_titulo">Ingresos</h2>
+        <div id="lista-ingresos">
+          <div class="elemento limpiarEstilos">
+            <div class="elemento_descripcion">Salario</div>
+            <div class="derecha limpiarEstilos">
+              <div class="elemento_valor">+ 2,200</div>
+              <div class="elemento_eliminar">
+                <button class="elemento_eliminar--btn">
+                  <ion-icon name="trash"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="elemento limpiarEstilos">
+            <div class="elemento_descripcion">Salario</div>
+            <div class="derecha limpiarEstilos">
+              <div class="elemento_valor">+ 2,200</div>
+              <div class="elemento_eliminar">
+                <button class="elemento_eliminar--btn">
+                  <ion-icon name="trash"></ion-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="src/js/Dato.js"></script>
     <script src="src/js/Ingreso.js"></script>
     <script src="src/js/Egreso.js"></script>
     <script src="src/js/app.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   </body>
 </html>
