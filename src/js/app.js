@@ -3,13 +3,14 @@ const ingresos = [
   new Ingreso("Venta coche", 1500),
 ];
 const egresos = [
-  new Egreso("Compra de pieza", 600),
+  new Egreso("Compra de tarjeta", 700),
   new Egreso("Ropa de paca", 60),
 ];
 
 let cargarApp = () => {
   cargarCabecero();
   cargarIngresos();
+  cargarEgresos();
 };
 
 const totalIngresos = () => {
@@ -83,17 +84,19 @@ const crearIngresoHTML = (ingreso) => {
 const cargarEgresos = () => {
   let egresosHTML = "";
   for (let egreso of egresos) {
-    egresosHTML = +crearEgresoHTML(egreso);
+    egresosHTML += crearEgresoHTML(egreso);
   }
   document.getElementById("lista-egresos").innerHTML = egresosHTML;
 };
 
-const crearEgresoHTML = () => {
+const crearEgresoHTML = (egreso) => {
   let egresoHTML = `<div class="elemento limpiarEstilos">
 <div class="elemento_descripcion">${egreso.descripcion}</div>
 <div class="derecha limpiarEstilos">
   <div class="elemento_valor">${formatoMoneda(egreso.valor)}</div>
-  <div class="elemento_porcentaje">${formatoPorcentaje()}</div>
+  <div class="elemento_porcentaje">${formatoPorcentaje(
+    egreso.valor / totalEgresos()
+  )}</div>
   <div class="elemento_eliminar">
     <button class="elemento_eliminar--btn">
       <ion-icon name="trash"></ion-icon>
