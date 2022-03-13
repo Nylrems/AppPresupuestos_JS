@@ -57,6 +57,13 @@ let cargarCabecero = () => {
   document.getElementById("egresos").innerHTML = formatoMoneda(totalEgresos());
 };
 
+const eliminarIngreso = (id) => {
+  let indiceEliminar = ingresos.findIndex((ingreso) => ingreso.id === id);
+  ingresos.splice(indiceEliminar, 1); //Eliminado el valor de los arreglos
+  cargarCabecero();
+  cargarIngresos();
+};
+
 const cargarIngresos = () => {
   let ingresosHTML = "";
   for (let ingreso of ingresos) {
@@ -72,13 +79,21 @@ const crearIngresoHTML = (ingreso) => {
   <div class="elemento_valor">${formatoMoneda(ingreso.valor)}</div>
   <div class="elemento_eliminar">
     <button class="elemento_eliminar--btn">
-      <ion-icon name="trash"></ion-icon>
+      <ion-icon name="trash"
+      onclick='eliminarIngreso(${ingreso.id})'></ion-icon>
     </button>
   </div>
 </div>
 </div>`;
 
   return ingresoHTML;
+};
+
+const eliminarEgreso = (id) => {
+  let indiceEliminar = egresos.findIndex((egreso) => egreso.id === id);
+  egresos.splice(indiceEliminar, 1); //Eliminado el valor de los arreglos
+  cargarCabecero();
+  cargarEgresos();
 };
 
 const cargarEgresos = () => {
@@ -99,7 +114,8 @@ const crearEgresoHTML = (egreso) => {
   )}</div>
   <div class="elemento_eliminar">
     <button class="elemento_eliminar--btn">
-      <ion-icon name="trash"></ion-icon>
+      <ion-icon name="trash"
+      onclick='eliminarEgreso(${egreso.id})'></ion-icon>
     </button>
   </div>
 </div>
